@@ -1,0 +1,56 @@
+@import '_variables.scss';
+@import 'mixins.scss';
+* {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-size: 16px;
+    background-color: $primarycolor;
+    font-family: $fontFamily;
+    .container {
+      height: 100vh;
+      width: 100vw;
+      justify-content: center;
+      display: flex;
+      vertical-align: middle;
+      align-items: center;
+      div {
+        padding: 50px;
+        background-color: $secondaryColor;
+        border-radius: 5px;
+        h3 {
+          margin-bottom: 15px;
+          text-align: center;
+          color: $primarycolor;
+        }
+        form {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          input {
+            padding: 5px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #8080805e;
+          }
+          button {
+            font-size: 1rem;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            background-color: $primarycolor;
+            border: none;
+            border-radius: 5px;
+            color: $secondaryColor;
+            cursor: pointer;
+          }
+          a {
+            text-decoration: none;
+            color: $primarycolor;
+          }
+        }
+      }
+    }
+  }
+  

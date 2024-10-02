@@ -1,0 +1,93 @@
+<!-- Main content area -->
+<main class="max-w-7xl mx-auto mt-4">
+  <!-- Compose tweet form -->
+  <section
+    class="bg-white border border-gray-200 p-4 rounded-lg shadow-sm mb-4"
+  >
+    <form action="#" method="POST">
+      <textarea
+        id="tweetContent"
+        name="tweetContent"
+        rows="3"
+        class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring focus:border-blue-500"
+        placeholder="What's happening?"
+      ></textarea>
+      <div class="flex justify-end items-center mt-2">
+        <button
+          type="submit"
+          class="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-full focus:outline-none"
+        >
+          Tweet
+        </button>
+      </div>
+    </form>
+  </section>
+  <!-- Tweets -->
+  <section class="grid grid-cols-1 gap-4">
+    <!-- Tweet card -->
+    <% tweets.forEach((tweet)=>{ %>
+    <div class="bg-white border border-gray-200 p-4 rounded-lg shadow-sm">
+      <div class="flex">
+        <div class="flex-shrink-0">
+          <img
+            src="https://via.placeholder.com/50"
+            alt="User avatar"
+            class="w-10 h-10 rounded-full"
+          />
+        </div>
+        <div class="ml-2">
+          <h2 class="text-lg font-semibold">
+            <%= name %> <% if(isVerified){%>
+            <em> Verified </em>
+            <% }else{%>
+            <em> </em>
+            <% }%>
+          </h2>
+          <p class="text-gray-600">
+            @<%= username %> &middot; <%= tweet.timeStamp %>
+          </p>
+        </div>
+      </div>
+      <p class="mt-2 text-gray-800"><%= tweet.tweetContent %></p>
+      <div class="mt-4 flex justify-between items-center">
+        <div class="flex flex-col">
+          <button class="text-gray-600 hover:text-blue-500 mr-4">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 15l7-7 7 7"
+              ></path>
+            </svg>
+            20
+          </button>
+          <button class="text-gray-600 hover:text-blue-500">
+            <svg
+              class="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 9l-7 7-7-7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <button class="text-gray-600 hover:text-blue-500">Comment</button>
+      </div>
+    </div>
+    <% }) %>
+  </section>
+</main>

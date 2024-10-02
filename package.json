@@ -1,0 +1,38 @@
+{
+  "name": "simple-web-server",
+  "version": "1.0.0",
+  "description": "A really simple web server",
+  "main": "serverjs",
+  "scripts": {
+    "start": "node --watch ./server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build-css": "sass --no-source-map --watch scss:public/css",
+    "tw:build": "tailwindcss build -i ./public/css/tailwind.css -o ./public/css/main.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruvin-makwana/WEB322_ZCC.git"
+  },
+  "keywords": [
+    "api"
+  ],
+  "author": "Dhruvin Makwana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhruvin-makwana/WEB322_ZCC/issues"
+  },
+  "homepage": "https://github.com/dhruvin-makwana/WEB322_ZCC#readme",
+  "dependencies": {
+    "@tailwindcss/typography": "^0.5.13",
+    "cookie-parser": "^1.4.6",
+    "daisyui": "^4.12.7",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1"
+  },
+  "devDependencies": {
+    "sass": "^1.77.5",
+    "tailwindcss": "^3.4.4"
+  }
+}

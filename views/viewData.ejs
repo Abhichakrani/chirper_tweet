@@ -1,0 +1,6 @@
+<%- include('partials/header',{route:route}) %> 
+<% if(route==='/home'){ %> <%- include('home')%> <% } %> 
+<% if(route==='/profile'){ %> <%- include('profile') %> <% } %> 
+<% if(route==='/explore'){ %> <%- include('explore') %> <% } %> 
+<% if(route==='/notifications'){ %> <%- include('notifications') %> <% } %> 
+<%-include('partials/footer') %>

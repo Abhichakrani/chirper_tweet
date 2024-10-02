@@ -1,0 +1,39 @@
+<!-- Main content area -->
+<main class="max-w-7xl mx-auto mt-4">
+  <section
+    class="bg-white border border-gray-200 p-4 rounded-lg shadow-sm mb-4"
+  >
+    <div class="flex">
+      <div class="flex-shrink-0">
+        <img
+          id="profile-picture"
+          src="https://placehold.co/150"
+          alt="User avatar"
+          class="w-50 h-50 rounded-full"
+        />
+      </div>
+      <div class="ml-5 justify-center flex flex-col">
+        <h2 class="text-lg font-semibold" id="name">John Doe</h2>
+        <p class="text-gray-600" id="username">@johndoe</p>
+      </div>
+    </div>
+  </section>
+</main>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    let myRequest = new Request("/api/profile", {
+      method: "GET",
+    });
+    let fetchReq = fetch(myRequest);
+    fetchReq
+      .then(async (res) => {
+        let data = await res.json();
+        document.getElementById("name").innerText =
+          data.firstName + " " + data.lastName;
+        document.getElementById("username").innerText = "@" + data.username;
+      })
+      .catch(() => {
+        console.log("Error Fetching Data");
+      });
+  });
+</script>

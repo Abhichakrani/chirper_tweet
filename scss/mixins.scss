@@ -1,0 +1,4 @@
+@mixin boxShadowFontolor($boxShadowColor:black,$fontColor:red){
+    box-shadow: 4px 7px 6px 3px $boxShadowColor;
+    color: $fontColor
+}
